@@ -1,0 +1,18 @@
+import { Text, StyleSheet } from "react-native"
+
+const H1 = ({children}) => {
+  return (
+    <Text style={styles.h1}> {children} </Text>
+  )
+}
+
+const styles = StyleSheet.create ({
+    
+    h1: {
+        fontSize: 70,
+        fontWeight: 'bold'
+
+    }
+})
+
+export default H1

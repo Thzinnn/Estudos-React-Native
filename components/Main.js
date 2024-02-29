@@ -1,11 +1,14 @@
 import { StyleSheet, Text, View, Image } from 'react-native';
+import H1 from './Ui/H1';
+import CardUser from './CardUser';
 
 const Main = () => {
 
     return(
         <View style={styles.main}>
         <View >
-
+          <H1>IAI PAIII</H1>
+          <CardUser/>
         </View>
       </View>
     )
@@ -18,6 +21,7 @@ const styles = StyleSheet.create ({
         flex: 9,
         width: '100%',
         justifyContent: 'center',
+        alignItems: 'center',
       },
     
       boasvindas: {
