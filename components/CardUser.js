@@ -2,20 +2,18 @@ import { View, StyleSheet, Text } from "react-native"
 import { Image as ImageExpo } from 'expo-image';
 import H4 from "./Ui/H4";
 
-const CardUser = () => {
+const CardUser = ({avatar, email, name}) => {
   return (
     <View style={styles.card}>
         <View style={styles.avatar}>
         <ImageExpo
                 style={styles.avatarImg}
-                source={{
-                    uri: 'https://www.mjornal.com.br/wp-content/uploads/2023/09/gatinho-678x381.jpg',
-                }}
-            />
+                source={avatar}
+                />
         </View>
         <View> 
-            <H4>Thiago Inácio Lima</H4>
-            <Text style={styles.email}>thiagoil2006@gmail.com</Text>
+            <H4>{name}</H4>
+            <Text style={styles.email}>{email}</Text>
         </View>
     </View>
   )
@@ -25,7 +23,7 @@ const styles = StyleSheet.create({
     card:{
         flexDirection: 'row',
         alignItems: 'center',
-
+        marginBottom: 25,
         width: 300,
         height: 100,
         backgroundColor: '#FFF',

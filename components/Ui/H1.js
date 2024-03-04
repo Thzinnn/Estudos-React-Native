@@ -1,8 +1,8 @@
 import { Text, StyleSheet } from "react-native"
 
-const H1 = ({children}) => {
+const H1 = ({ style, children}) => {
   return (
-    <Text style={styles.h1}> {children} </Text>
+    <Text style={[styles.h1, style]}> {children} </Text>
   )
 }
 
