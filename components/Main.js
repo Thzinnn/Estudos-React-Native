@@ -53,7 +53,11 @@ const Main = () => {
               keyExtractor={item => item.id}
               horizontal={true}
           />
-
+            <FlatList
+              data={users}
+              renderItem={({item}) => <CardUser user={item}/>}
+              keyExtractor={item => item.id}
+          />
           {/* <CardUser user={users[0]}/>
           <CardUser user={users[1]}/>
           <CardUser user={users[2]}/> */}
