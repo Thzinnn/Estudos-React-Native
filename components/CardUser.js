@@ -2,18 +2,18 @@ import { View, StyleSheet, Text } from "react-native"
 import { Image as ImageExpo } from 'expo-image';
 import H4 from "./Ui/H4";
 
-const CardUser = ({avatar, email, name}) => {
+const CardUser = ({user}) => {
   return (
     <View style={styles.card}>
         <View style={styles.avatar}>
         <ImageExpo
                 style={styles.avatarImg}
-                source={avatar}
+                source={user.avatar}
                 />
         </View>
         <View> 
-            <H4>{name}</H4>
-            <Text style={styles.email}>{email}</Text>
+            <H4>{user.name}</H4>
+            <Text style={styles.email}>{user.email}</Text>
         </View>
     </View>
   )
