@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, Image, FlatList } from 'react-native';
 import H1 from './Ui/H1';
+import { useEffect } from 'react';
 import CardUser from './CardUser';
 
 const users = [
@@ -41,7 +42,23 @@ const users = [
   },
 ]
 
+
+
 const Main = () => {
+
+  const getUsers = async () =>{
+    try{
+    const result = await fetch('http://localhost:3333/user')
+    const data = await result.json()
+    console.log(data)
+  } catch (error) {
+    console.log(error.menssage)
+  }
+  }
+
+  useEffect(() =>{
+    getUsers()
+  },[])
 
     return(
         <View style={styles.main}>
