@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         marginBottom: 25,
+        marginHorizontal: 8,
         width: 300,
         height: 100,
         backgroundColor: '#FFF',

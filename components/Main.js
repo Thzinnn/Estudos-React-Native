@@ -1,14 +1,16 @@
-import { StyleSheet, Text, View, Image, FlatList } from 'react-native';
+import { StyleSheet, Text, View, Image, FlatList, TouchableHighlight } from 'react-native';
 import H1 from './Ui/H1';
 import { useEffect, useState } from 'react';
 import CardUser from './CardUser';
 import CardProduct from './CardProduct';
+import Button from './Ui/Button'
 
 
 const Main = () => {
 
   const [users, setUsers] = useState([])
   const [products, setProduct] = useState([])
+  const [contador, setContador] = useState(0)
 
   const getProducts = async () =>{
     try {
@@ -42,7 +44,15 @@ const Main = () => {
 
     return(
         <View style={styles.main}>
-        <View >
+          <Button
+            title="Add +2"
+            onPress={() => setContador(contador + 1)}
+          />
+          <Button
+          title='Add +1'
+          onPress={() => setContador(contador + 1)}
+          />
+          <Text style={{color: '#FFF', fontSize: 30}}>Valor: {contador}</Text>
           <H1 style={styles.margin}>IAI PAIII</H1>
           <FlatList
               data={users}
@@ -60,7 +70,6 @@ const Main = () => {
           {/* <CardUser user={users[0]}/>
           <CardUser user={users[1]}/>
           <CardUser user={users[2]}/> */}
-        </View>
       </View>
     )
 
@@ -94,6 +103,12 @@ const styles = StyleSheet.create ({
       },
       margin: {
         marginBottom: 25,
+      },
+      myButton: {
+        backgroundColor: '#973625',
+        borderRadius: 20,
+        paddingHorizontal: 20,
+        paddingVertical: 5,
       }
 
 })
