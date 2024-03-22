@@ -9,7 +9,7 @@ const H1 = ({ style, children}) => {
 const styles = StyleSheet.create ({
     
     h1: {
-        fontSize: 60,
+        fontSize: 40,
         fontWeight: 'bold'
 
     }

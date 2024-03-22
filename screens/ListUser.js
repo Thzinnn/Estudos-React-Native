@@ -9,12 +9,12 @@ console.log("test")
 
 const ListUser = () => {
   return (
-    <ScrollView>
-      <Header />
+    <View>
+
       <Body />
-      <Footer />
+
       <StatusBar style="auto" />
-    </ScrollView>
+    </View>
   );
 }
 

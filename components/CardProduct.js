@@ -24,7 +24,7 @@ const CardProduct = ({product}) => {
 const styles = StyleSheet.create({
     card:{
         alignItems: 'center',
-        marginBottom: 25,
+        marginVertical: 10,
         marginHorizontal: 10,
         width: 150,
         height: 200,

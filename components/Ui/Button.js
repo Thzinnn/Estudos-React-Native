@@ -23,7 +23,7 @@
     },
     textButton:{
       color: '#FFF',
-       fontSize: 30,
+       fontSize: 20,
         textAlign: 'center'
     },
  })

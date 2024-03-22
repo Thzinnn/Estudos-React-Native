@@ -1,5 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
-import { ImageBackground, StyleSheet, Text, View, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ListUser from './screens/ListUser';
@@ -14,7 +12,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
       <Stack.Screen name="ListUser" component={ListUser}/>
-      <Stack.Screen name="Cadastro" component={Cadastrar}/>
+      <Stack.Screen name="Cadastrar" component={Cadastrar}/>
       <Stack.Screen name="Editar" component={Editar}/>
 
       </Stack.Navigator>
