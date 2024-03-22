@@ -20,7 +20,7 @@ const Header = () => {
 
 const styles = StyleSheet.create({ 
     header: {
-        flex: 1.7,
+
         width: '100%',
         backgroundColor: '#497b8f',
         justifyContent: 'center',

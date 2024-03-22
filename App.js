@@ -1,39 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
 import { ImageBackground, StyleSheet, Text, View, Image } from 'react-native';
-import Header from './components/Header.js';
-import Footer from './components/Footer';
-import Main from './components/Main';
-import { Image as ImageExpo } from 'expo-image';
-
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import ListUser from './screens/ListUser';
+import Cadastrar from './screens/Cadastrar';
+import Editar from './screens/Editar';
 console.log("test")
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <ImageBackground
-      resizeMode='cover'
-       source={require('./assets/images/Wallpaper-vulcão-para-celular-de-viajantes-travel-wanderlust-iphone-paisagem.jpeg')}
-       style={styles.bg}
-      >
-      <Header />
-      <Main />
-      <Footer />
-      </ImageBackground>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+      <Stack.Screen name="ListUser" component={ListUser}/>
+      <Stack.Screen name="Cadastro" component={Cadastrar}/>
+      <Stack.Screen name="Editar" component={Editar}/>
+
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({  
-
-  container: {
-    flex: 1
-  },
-
-  bg: {
-    flex: 1,
-    justifyContent: 'center',
-    width: '100%'
-  }
-});
 
