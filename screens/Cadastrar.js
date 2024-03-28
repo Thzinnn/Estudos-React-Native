@@ -6,7 +6,9 @@ import { useNavigation, useRoute } from '@react-navigation/native'
 const Cadastrar = () => {
     const navigation = useNavigation()
     const route = useRoute()
-    const {users, setUsers} = route.params
+    // const {users, setUsers} = route.params
+    const users = []
+    const setUsers = () => {}
 
     const [txtName, setTxtName] = useState('')
     const [txtEmail, setTxtEmail] = useState('')

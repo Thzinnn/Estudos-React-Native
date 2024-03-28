@@ -90,6 +90,10 @@ const Editar = () => {
                     title="Remover Usúario"
                     onPress={removeUser}
                 />
+                <Button 
+                    title="Products"
+                    onPress={() => navigation.navigate('Products')}
+                />
             </View>
         </ScrollView>
     )
