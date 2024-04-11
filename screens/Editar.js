@@ -3,11 +3,14 @@ import { useRoute } from '@react-navigation/native'
 import { useState } from 'react'
 import  Button from '../components/Ui/Button'
 import { useNavigation } from '@react-navigation/native'
+import { useUserStore } from '../stores/userStores'
 
 const Editar = () => {
     const navigation = useNavigation()
     const route = useRoute()
     const {user} = route.params
+
+    const removeUserStore = useUserStore((state) => state.remove)
 
     const [txtName, setTxtName] = useState(user.name)
     const [txtEmail, setTxtEmail] = useState(user.email)
@@ -48,7 +51,8 @@ const Editar = () => {
           })
           const data = await result.json()
           console.log(data)
-          if(data?.success){
+          if(data?.success){  
+              removeUserStore(user.id)
             navigation.goBack()
           }
           else {

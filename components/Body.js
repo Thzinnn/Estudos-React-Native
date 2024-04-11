@@ -1,18 +1,21 @@
 import { StyleSheet, Text, View, Image, FlatList, TouchableHighlight, TextInput, Platform} from 'react-native';
 import H1 from './Ui/H1';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import CardUser from './CardUser';
 import Button from './Ui/Button';
 import { useNavigation } from '@react-navigation/native';
 import Header from './Header';
 import Footer from './Footer';
+import { useUserStore } from '../stores/userStores';
 
 
 
 
 const Body = () => {
 
-  const [users, setUsers] = useState([])
+  const users = useUserStore((state) => state.users)
+  const setUsers = useUserStore((state) => state.setUsers)
+
   const navigation = useNavigation()
   console.log('Platform ', Platform.OS);
   const getUsers = async () =>{
@@ -35,7 +38,7 @@ const Body = () => {
         <View style={styles.body}>
           <View style={styles.titleAdd}>
           <H1 style={styles.margin}>Usuarios</H1>
-          <Button title='Add Usuarios' onPress={() => navigation.navigate('Cadastrar', {users, setUsers})}/>
+          <Button title='Add Usuarios' onPress={() => navigation.navigate('Cadastrar')}/>
           </View>
           <View style={styles.listUser}>
           <FlatList
