@@ -10,7 +10,7 @@ const Editar = () => {
     const route = useRoute()
     const {user} = route.params
 
-    const removeUserStore = useUserStore((state) => state.remove)
+    const removeUserStore = useUserStore((state) => state.removeUser)
 
     const [txtName, setTxtName] = useState(user.name)
     const [txtEmail, setTxtEmail] = useState(user.email)
