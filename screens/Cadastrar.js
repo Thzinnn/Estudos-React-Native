@@ -2,12 +2,12 @@ import { useState } from 'react'
 import {View, TextInput, StyleSheet, ScrollView} from 'react-native'
 import Button from '../components/Ui/Button'
 import { useNavigation } from '@react-navigation/native'
-import { useUserStore } from '../stores/userStores'
+
 
 const Cadastrar = () => {
     const navigation = useNavigation()
     
-    const addUser = useUserStore((state) => state.addUser)
+
 
     const [txtName, setTxtName] = useState('')
     const [txtEmail, setTxtEmail] = useState('')
@@ -25,7 +25,6 @@ const Cadastrar = () => {
           const data = await result.json()
           console.log(data)
           if(data?.success){
-            addUser(data.user)
             navigation.goBack()
           }
           else {
