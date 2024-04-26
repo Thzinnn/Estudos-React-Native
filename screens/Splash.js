@@ -20,7 +20,7 @@ export const Splash = () => {
 
   return (
     <View style={styles.container}>
-        <Text>Carregando</Text>
+        <Text>Carregando....</Text>
     </View>
   )
 }

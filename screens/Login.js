@@ -9,6 +9,8 @@ import H1 from '../components/Ui/H1'
 
 export const Login = () => {
     
+    const navigation = useNavigation()
+
     const [txtPass, setTxtPass] = useState('')
     const [txtEmail, setTxtEmail] = useState('')
 

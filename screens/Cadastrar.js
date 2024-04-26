@@ -12,6 +12,7 @@ const Cadastrar = () => {
     const [txtName, setTxtName] = useState('')
     const [txtEmail, setTxtEmail] = useState('')
     const [txtAvatar, setTxtAvatar] = useState('')
+    const [txtPass, setTxtPass] = useState('')
 
     const postUser = async () =>{
         try{
@@ -20,7 +21,7 @@ const Cadastrar = () => {
             headers:{
               "Content-Type": "application/json"
             },
-            body: JSON.stringify({name: txtName, email: txtEmail, avatar: txtAvatar})
+            body: JSON.stringify({name: txtName, email: txtEmail,pass: txtPass, avatar: txtAvatar})
           })
           const data = await result.json()
           console.log(data)
@@ -51,6 +52,12 @@ const Cadastrar = () => {
                 placeholder='Email...'
                 onChangeText={setTxtEmail}
                 value={txtEmail}
+                />
+                 <TextInput 
+                style={styles.input}
+                placeholder='Senha...'
+                onChangeText={setTxtPass}
+                value={txtPass}
                 />
                 <TextInput 
                 style={styles.input}

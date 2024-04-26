@@ -7,6 +7,7 @@ import Products from './screens/Products';
 import UserNavigator from './navigators/UserNavigator';
 import Splash from './screens/Splash.js'
 import Login from './screens/Login.js';
+import Cadastrar from './screens/Cadastrar.js';
 console.log("test")
 
 const Stack = createNativeStackNavigator();
@@ -62,6 +63,7 @@ const MainNavigator = () => {
 
 export default function App() {
   return (
+    <NavigationContainer>
     <Stack.Navigator>
         <Stack.Screen
         name="Splash"
@@ -84,7 +86,17 @@ export default function App() {
             headerShown: false
           }}
           />
+          <Stack.Screen
+          name="Cadastrar"
+          component={Cadastrar}
+          options={{
+            title: "Cadastrar Usuário",
+            headerStyle: {backgroundColor: '#000'},       
+            headerTintColor: '#FFF'
+        }}
+        />
           </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
